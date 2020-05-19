@@ -5,6 +5,13 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/', disallow: "/images/background" }]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -28,5 +35,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`, // this plugin enables Progressive Web App + Offline functionality
+    `gatsby-plugin-remove-console`,
+    `gatsby-plugin-postcss`,
   ],
 }
