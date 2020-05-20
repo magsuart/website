@@ -6,83 +6,77 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
+import MagsuIcon from "../images/magsuart-icon.png"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+function SEO({ title, lang, description, keywords }) {
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(query)
 
-  const metaDescription = description || site.siteMetadata.description
+  console.log(site.siteMetadata)
+
+  const {
+    defaultTitle,
+    defaultLang,
+    defaultDescription,
+    siteUrl,
+    defaultKeywords,
+  } = site.siteMetadata
+
+  const seo = {
+    title: title || defaultTitle,
+    lang: lang || defaultLang,
+    description: description || defaultDescription,
+    url: `${siteUrl}${pathname}`,
+    keywords: defaultKeywords.join(",")
+  }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Helmet defaultTitle={seo.title} titleTemplate={`${seo.title} · %s`}>
+
+      <html lang={seo.lang} />
+      <meta property="og:locale" content={seo.lang} />
+      <meta property="og:type" content="website" />
+
+      <meta name="keywords" content={seo.keywords} />
+
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:site_name" content={seo.title} />
+
+      <link rel="canonical" href={seo.url} />
+      <meta property="og:url" content={seo.url} />
+
+      <meta name="description" content={seo.url} />
+      <meta property="og:description" content={seo.description} />
+
+      <meta name="image" content={`${siteUrl}${MagsuIcon}`} />
+      <meta property="og:image" content={`${siteUrl}${MagsuIcon}`} />
+      <meta property="og:image:alt" content="Magsu.art Logo" />
+      <meta property="og:image:width" content="512" />
+      <meta property="og:image:height" content="512" />
+      {/* <meta name="docsearch:version" content="2.0" /> */}
+      {/* <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
+      /> */}
+    </Helmet>
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        title
+        lang
+        description
+        siteUrl
+        keywords
+      }
+    }
+  }
+`
 
 export default SEO

@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Magsu.art`,
+    lang: `en`,
+    description: `Freelance Creative & Professional Digital artist.`,
+    siteUrl: `https://magsu.art`,
+    keywords: ['magsu.art', 'Digital artist', '3D', 'VFX', 'Animation', 'Video']
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -17,7 +19,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -25,17 +27,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Magsu.art`,
+        short_name: `Magsu.art`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#663399`, // mettre le violet du logo youtube
+        theme_color: `#663399`, // mettre le violet du logo youtube
+        display: `standalone`,
+        icon: `src/images/magsuart-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`, // this plugin enables Progressive Web App + Offline functionality
+    `gatsby-plugin-offline`,
     `gatsby-plugin-remove-console`,
     `gatsby-plugin-postcss`,
+    `gatsby-transformer-json`,
   ],
 }
