@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -13,25 +13,23 @@ const IndexPage = () => {
     allFile
   } = useStaticQuery(query)
 
-  console.log(allFile)
-
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO />
       <h1>I'm Magsu.art</h1>
       <p>Freelance Creative & Professional Digital artist.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <div style={{ maxWidth: `700px`, marginBottom: `1.45rem` }}>
 
         {allSkillsJson.edges.map(edge => {
           return <div key={edge.node.id}><h2>{edge.node.title}</h2><p>{edge.node.description}</p></div>
         })}
-        <hr/>
+        <hr />
         {allPortfolioJson.edges.map(edge => {
           return <div key={edge.node.id}><h2>{edge.node.title}</h2><p>{edge.node.description}</p></div>
         })}
-        <hr/>
+        <hr />
         {allFile.edges.map(edge => {
-          return <Img key={edge.node.id} fluid={edge.node.childImageSharp.fluid} alt={edge.node.base}/>
+          return <Img style={{margin: "0 auto"}} key={edge.node.id} fluid={edge.node.childImageSharp.fluid} alt={edge.node.base} />
         })}
 
       </div>
@@ -67,11 +65,7 @@ const query = graphql`
           id
           childImageSharp {
             fluid {
-              base64
-              aspectRatio
-              src
-              srcSet
-              sizes
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
           base

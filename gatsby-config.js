@@ -30,8 +30,8 @@ module.exports = {
         name: `Magsu.art`,
         short_name: `Magsu.art`,
         start_url: `/`,
-        background_color: `#663399`, // mettre le violet du logo youtube
-        theme_color: `#663399`, // mettre le violet du logo youtube
+        background_color: `#FF02A0`, // mettre le violet du logo youtube
+        theme_color: `#FF02A0`, // mettre le violet du logo youtube
         display: `standalone`,
         icon: `src/images/magsuart-icon.png`, // This path is relative to the root of the site.
       },
@@ -40,5 +40,11 @@ module.exports = {
     `gatsby-plugin-remove-console`,
     `gatsby-plugin-postcss`,
     `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ],
 }

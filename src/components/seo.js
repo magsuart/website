@@ -1,38 +1,30 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import MagsuIcon from "../images/magsuart-icon.png"
 
-function SEO({ title, description }) {
+function SEO({ titleParam, descriptionParam }) {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
-  console.log(site.siteMetadata)
-
   const {
-    defaultTitle,
+    title,
     lang,
-    defaultDescription,
+    description,
     siteUrl,
     keywords,
   } = site.siteMetadata
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
+    title: titleParam || title,
+    description: descriptionParam || description,
     url: `${siteUrl}${pathname}`
   }
 
   return (
-    <Helmet defaultTitle={seo.title} titleTemplate={`${seo.title} · %s`}>
+    <Helmet>
+      <title>{seo.title}</title>
 
       <html lang={lang} />
       <meta property="og:locale" content={lang} />
@@ -46,7 +38,7 @@ function SEO({ title, description }) {
       <link rel="canonical" href={seo.url} />
       <meta property="og:url" content={seo.url} />
 
-      <meta name="description" content={seo.url} />
+      <meta name="description" content={seo.description} />
       <meta property="og:description" content={seo.description} />
 
       <meta name="image" content={`${siteUrl}${MagsuIcon}`} />
