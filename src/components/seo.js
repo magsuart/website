@@ -11,7 +11,7 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import MagsuIcon from "../images/magsuart-icon.png"
 
-function SEO({ title, lang, description, keywords }) {
+function SEO({ title, description }) {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
 
@@ -19,28 +19,26 @@ function SEO({ title, lang, description, keywords }) {
 
   const {
     defaultTitle,
-    defaultLang,
+    lang,
     defaultDescription,
     siteUrl,
-    defaultKeywords,
+    keywords,
   } = site.siteMetadata
 
   const seo = {
     title: title || defaultTitle,
-    lang: lang || defaultLang,
     description: description || defaultDescription,
-    url: `${siteUrl}${pathname}`,
-    keywords: defaultKeywords.join(",")
+    url: `${siteUrl}${pathname}`
   }
 
   return (
     <Helmet defaultTitle={seo.title} titleTemplate={`${seo.title} · %s`}>
 
-      <html lang={seo.lang} />
-      <meta property="og:locale" content={seo.lang} />
+      <html lang={lang} />
+      <meta property="og:locale" content={lang} />
       <meta property="og:type" content="website" />
 
-      <meta name="keywords" content={seo.keywords} />
+      <meta name="keywords" content={keywords} />
 
       <meta property="og:title" content={seo.title} />
       <meta property="og:site_name" content={seo.title} />
