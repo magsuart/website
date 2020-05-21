@@ -2,86 +2,103 @@
     {
         "title": "African woman",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "african_woman.jpg"
+        "fileName": "african_woman.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Barrel",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "barrels.jpg"
+        "fileName": "barrels.jpg",
+        "tags": ["3D"]
     },
     {
         "title": "Brown woman",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "brown_woman.jpg"
+        "fileName": "brown_woman.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Camel",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "camel.jpg"
+        "fileName": "camel.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Caricature",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "caricature.jpg"
+        "fileName": "caricature.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Desintegration girl",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "desintegration_girl.jpg"
+        "fileName": "desintegration_girl.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Ditys",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "ditys.jpg"
+        "fileName": "ditys.jpg",
+        "tags": ["Illustration"]
     },
     {
         "title": "Doe in forest",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "doe_in_forest.jpg"
+        "fileName": "doe_in_forest.jpg",
+        "tags": ["Photography"]
     },
     {
-        "title": "escargot",
+        "title": "Escargot",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "escargot.jpg"
+        "fileName": "escargot.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Flying turtle",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "flying_turtle.jpg"
+        "fileName": "flying_turtle.jpg",
+        "tags": ["Illustration"]
     },
     {
-        "title": "japonaise",
+        "title": "Japonaise",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "japonaise.jpg"
+        "fileName": "japonaise.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Moonlight girl",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "moonlight_girl.jpg"
+        "fileName": "moonlight_girl.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Purple tiger",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "purple_tiger.jpg"
+        "fileName": "purple_tiger.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Statue of liberty",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "statue_of_liberty.jpg"
+        "fileName": "statue_of_liberty.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Well",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "well.jpg"
+        "fileName": "well.jpg",
+        "tags": ["3D"]
     },
     {
         "title": "Woman make over",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "woman_make_over.jpg"
+        "fileName": "woman_make_over.jpg",
+        "tags": ["Photography"]
     },
     {
         "title": "Woman sweat",
         "description": "Lorem ipsum dolor sit amet",
-        "fileName": "woman_sweat.jpg"
+        "fileName": "woman_sweat.jpg",
+        "tags": ["Photography"]
     }
 ]

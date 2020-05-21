@@ -1,22 +1,22 @@
 [
     {
-        "title": "Photoshop",
+        "title": "Photography",
         "description": "Photomanipulation, Retouching photos, Old photo restoration, Black and white photos colorization"
     },
     {
-        "title": "Illustrator",
+        "title": "Illustration",
         "description": "Logos, Icons, Drawings, Flyers"
     },
     {
-        "title": "Premiere Pro",
+        "title": "Video",
         "description": "Editing, Color grading"
     },
     {
-        "title": "After Effects",
-        "description": "VFX, Logo animation, Animation"
+        "title": "VFX",
+        "description": "Logo animation, Animation"
     },
     {
-        "title": "Blender",
-        "description": "3D Modelization, 3D Animation"
+        "title": "3D",
+        "description": "Modelization, Animation"
     }
 ]
