@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "gh-pages": "^2.2.0",
     "prettier": "2.0.5",
     "tailwindcss": "^1.4.6"
   },
