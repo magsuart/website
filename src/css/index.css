@@ -30,6 +30,9 @@ a {
 @tailwind components;
 @tailwind utilities;
 
+/****************************
+          MASONRY
+****************************/
 
 .tagButtons:focus {
   border-color: transparent !important;

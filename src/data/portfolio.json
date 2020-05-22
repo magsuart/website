@@ -3,102 +3,245 @@
         "title": "African woman",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "african_woman.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
+    },
+    {
+        "title": "3D creepy animation",
+        "description": "Lorem ipsum dolor sit amet",
+        "embed": "https://www.youtube.com/embed/jQElJTdtsZo",
+        "tags": [
+            "Video",
+            "VFX",
+            "3D"
+        ],
+        "tagsFilter": [
+            "Video",
+            "VFX",
+            "DDD"
+        ]
     },
     {
         "title": "Barrel",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "barrels.jpg",
-        "tags": ["3D"]
+        "tags": [
+            "3D"
+        ],
+        "tagsFilter": [
+            "DDD"
+        ]
     },
     {
         "title": "Brown woman",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "brown_woman.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Camel",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "camel.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
+    },
+    {
+        "title": "3D epic animation",
+        "description": "Lorem ipsum dolor sit amet",
+        "embed": "https://www.youtube.com/embed/6DJXVJ3MH4s",
+        "tags": [
+            "Video",
+            "VFX",
+            "3D"
+        ],
+        "tagsFilter": [
+            "Video",
+            "VFX",
+            "DDD"
+        ]
     },
     {
         "title": "Caricature",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "caricature.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Desintegration girl",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "desintegration_girl.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Ditys",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "ditys.jpg",
-        "tags": ["Illustration"]
+        "tags": [
+            "Illustration"
+        ],
+        "tagsFilter": [
+            "Illustration"
+        ]
+    },
+    {
+        "title": "3D Fish animation",
+        "description": "Lorem ipsum dolor sit amet",
+        "embed": "https://www.youtube.com/embed/Q6Q7st7_8pU",
+        "tags": [
+            "Video",
+            "VFX",
+            "3D"
+        ],
+        "tagsFilter": [
+            "Video",
+            "VFX",
+            "DDD"
+        ]
     },
     {
         "title": "Doe in forest",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "doe_in_forest.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Escargot",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "escargot.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Flying turtle",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "flying_turtle.jpg",
-        "tags": ["Illustration"]
+        "tags": [
+            "Illustration"
+        ],
+        "tagsFilter": [
+            "Illustration"
+        ]
     },
     {
         "title": "Japonaise",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "japonaise.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
+    },
+    {
+        "title": "Trailer",
+        "description": "Finale CAN Mantes-la-Jolie 78200 🇨🇩 🇸🇳",
+        "embed": "https://www.youtube.com/embed/EdLXrhX4AHo",
+        "tags": [
+            "Video",
+            "VFX"
+        ],
+        "tagsFilter": [
+            "Video",
+            "VFX"
+        ]
     },
     {
         "title": "Moonlight girl",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "moonlight_girl.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Purple tiger",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "purple_tiger.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Statue of liberty",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "statue_of_liberty.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Well",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "well.jpg",
-        "tags": ["3D"]
+        "tags": [
+            "3D"
+        ],
+        "tagsFilter": [
+            "DDD"
+        ]
     },
     {
         "title": "Woman make over",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "woman_make_over.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     },
     {
         "title": "Woman sweat",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "woman_sweat.jpg",
-        "tags": ["Photography"]
+        "tags": [
+            "Photography"
+        ],
+        "tagsFilter": [
+            "Photography"
+        ]
     }
 ]
