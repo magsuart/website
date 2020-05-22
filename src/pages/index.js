@@ -1,10 +1,8 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
-import styles from "./index.module.css"
 
 import BackgroundImage from 'gatsby-background-image'
 
@@ -12,44 +10,63 @@ import YoutubeIcon from "../images/svg/youtube.svg"
 import InstagramIcon from "../images/svg/instagram.svg"
 import MailIcon from "../images/svg/mail.svg"
 
+import portfolio from "../data/portfolio.json"
+import skills from "../data/skills.json"
+import tags from "../data/tags.json"
+
 // import EditToolsIcon from "../images/svg/edit-tools.svg"
 // import LayersIcon from "../images/svg/layers.svg"
 // import PhotoCameraIcon from "../images/svg/photo-camera.svg"
 // import VfxIcon from "../images/svg/vfx.svg"
 // import VideoCameraIcon from "../images/svg/video-cameras.svg"
 
-import Isotope from "isotope-layout/js/isotope"
+let Isotope
 
 const IndexPage = () => {
 
-  var iso;
+  const [iso, setIso] = useState(null)
 
-  const handleTagClick = tag => {
-    console.log("iso", iso)
+  const [btnSelected, setBtnSelected] = useState("btnAll")
+  const changeBtnSelected = value => {
+    setBtnSelected(value)
+  }
+
+  const handleTagClick = (event, tag) => {
+    changeBtnSelected(event.target.id)
+
     if (!iso) return
-    console.log("tag", tag)
+    console.log("Change isotope")
     iso.arrange({ filter: tag })
   }
 
   useEffect(() => {
-    iso = new Isotope('.masonry', {
-      itemSelector: '.card',
-    })
+    try {
+      Isotope = require("isotope-layout/js/isotope")
+
+      console.log("Init isotope")
+      let newIso = new Isotope('.masonry', {
+        itemSelector: '.card',
+      })
+      setIso(newIso)
+
+    } catch (e) {
+      console.error(e)
+    }
   }, [])
 
   const {
     magsuLogo,
     bgProfile,
-    skills,
-    portfolio,
+    bgPanel,
     allImages
   } = useStaticQuery(query)
 
   return (
-    <Layout>
+    <main>
       <SEO />
       <div className="grid grid-cols-12 gap-0 h-auto lg:h-screen">
 
+        {/* Left Panel */}
         <div className="col-span-12 lg:col-span-5 h-auto lg:h-screen bg-gray-300 text-white">
           <BackgroundImage
             className="grid grid-cols-1 h-full gap-10 lg:gap-0"
@@ -66,16 +83,20 @@ const IndexPage = () => {
 
             <footer className="col-span-1 self-end py-5 px-10">
               <div className="text-center lg:text-right my-1">
-                <a href="https://www.instagram.com/magsu.art/" target="_blank" rel="noreferrer"><InstagramIcon className="inline h-6 mx-2" /></a>
-                <a href="https://www.youtube.com/channel/UC_PC4SHLCl-6GD0sXsqkU5w" target="_blank" rel="noreferrer"><YoutubeIcon className="inline h-8 mx-2" /></a>
-                <a href="https://forms.gle/s8LAs1gH5JTcD6MR7" target="_blank" rel="noreferrer"><MailIcon className="inline h-8 ml-2" /></a>
+                <a href="https://www.instagram.com/magsu.art/" name="Instagram" target="_blank" rel="noreferrer"><InstagramIcon className="inline h-6 mx-2" /></a>
+                <a href="https://www.youtube.com/channel/UC_PC4SHLCl-6GD0sXsqkU5w" name="Youtube" target="_blank" rel="noreferrer"><YoutubeIcon className="inline h-8 mx-2" /></a>
+                <a href="https://forms.gle/s8LAs1gH5JTcD6MR7" name="Mail" target="_blank" rel="noreferrer"><MailIcon className="inline h-8 ml-2" /></a>
               </div>
-              <p className="text-center lg:text-right text-xs">© <a href="https://magsu.art">Magsu.art</a>{" "}{new Date().getFullYear()}, All rights reserved</p>
+              <p className="text-center lg:text-right text-xs">© <a href="https://magsu.art" name="Magsu.art">Magsu.art</a>{" "}{new Date().getFullYear()}, All rights reserved</p>
             </footer>
           </BackgroundImage>
         </div>
 
-        <div className="col-span-12 lg:col-span-7 h-auto lg:h-screen bg-orange-300 lg:overflow-y-scroll px-10 lg:p-16 gap-10" style={{ backgroundImage: "url('/texture.png')" }}>
+        {/* Right Panel */}
+        <div
+          className="col-span-12 lg:col-span-7 h-auto lg:h-screen bg-gray-100 lg:overflow-y-scroll px-10 lg:p-16 gap-10"
+          style={{ backgroundImage: `url(${bgPanel.childImageSharp.fixed.srcWebp})` }}
+        >
 
           {/* Introduction */}
           <div className="my-6 p-2">
@@ -86,39 +107,13 @@ const IndexPage = () => {
           {/* Skills */}
           <div className="my-6 p-2">
             <div className="grid grid-cols-12 gap-5">
-              {skills.edges.map(edge => {
-                let SvgIcon;
-                switch (edge.node.title) {
-                  case "Photography":
-                    // SvgIcon = <PhotoCameraIcon className="inline h-6 mr-2" />
-                    SvgIcon = <span>📷</span>
-                    break;
-                  case "Illustration":
-                    // SvgIcon = <EditToolsIcon className="inline h-6 mr-2" />
-                    SvgIcon = <span>🎨</span>
-                    break;
-                  case "Video":
-                    // SvgIcon = <VideoCameraIcon className="inline h-6 mr-2" />
-                    SvgIcon = <span>🎞️</span>
-                    break;
-                  case "VFX":
-                    // SvgIcon = <VfxIcon className="inline h-6 mr-2" />
-                    SvgIcon = <span>🎬</span>
-                    break;
-                  case "3D":
-                    // SvgIcon = <LayersIcon className="inline h-6 mr-2" />
-                    SvgIcon = <span>🌎</span>
-                    break;
-                  default:
-                    SvgIcon = ""
-                    break;
-                }
+              {skills.map((skill, id) => {
                 return (
-                  <div key={edge.node.id} className="col-span-12 sm:col-span-6 px-2">
+                  <div key={id} className="col-span-12 sm:col-span-6 px-2">
                     <h3 className="pb-2">
-                      {SvgIcon} <span className="underline">{edge.node.title}</span>
+                      <span role="img" aria-label="Photography">{skill.icon}</span> <span className="underline">{skill.title}</span>
                     </h3>
-                    <p className="text-sm">{edge.node.description}</p>
+                    <p className="text-sm">{skill.description}</p>
                   </div>
                 )
               })}
@@ -129,70 +124,50 @@ const IndexPage = () => {
 
           {/* Filter tags */}
           <div className="my-4 p-2 text-center">
-            <button
-              onClick={() => handleTagClick("*")}
-              className="m-2 py-1 px-4 text-sm shadow-md border-2 border-solid rounded border-red-300">
-              All
-            </button>
-            <button
-              onClick={() => handleTagClick(".Photography")}
-              className="m-2 py-1 px-4 text-sm shadow-md border-2 border-solid rounded border-red-200">Photography</button>
-            <button
-              onClick={() => handleTagClick(".Illustration")}
-              className="m-2 py-1 px-4 text-sm shadow-md border-2 border-solid rounded border-red-200">
-              Illustration
-            </button>
-            <button
-              onClick={() => handleTagClick(".Video")}
-              className="m-2 py-1 px-4 text-sm shadow-md border-2 border-solid rounded border-red-200">
-              Video
-            </button>
-            <button
-              onClick={() => handleTagClick(".VFX")}
-              className="m-2 py-1 px-4 text-sm shadow-md border-2 border-solid rounded border-red-200">
-              VFX
-            </button>
-            <button
-              onClick={() => handleTagClick(".3D")}
-              className="m-2 py-1 px-4 text-sm shadow-md border-2 border-solid rounded border-red-200">
-              3D
-            </button>
+            {tags.map((item, index) => {
+              const { id, value, tag } = item
+
+              return (
+                <button
+                  key={index}
+                  id={id}
+                  onClick={e => handleTagClick(e, tag)}
+                  className={`hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ml-3 mb-2 outline-none	${btnSelected === id ? "bg-blue-500" : "bg-red-300"} tagButtons`}>
+                  {value}
+                </button>
+              )
+            })}
           </div>
 
           {/* Portfolio cards */}
-          <div className={`my-4 masonry ${styles.masonry}`}>
-            {/* <div className={styles.masonry}> */}
-            {portfolio.edges.map(edge => {
-              let fileSrc;
-              allImages.edges.map(imagesEdge => {
-                if (edge.node.fileName === imagesEdge.node.base) {
-                  fileSrc = imagesEdge.node.childImageSharp.fluid
-                }
-                return null;
-              })
+          <div className={`my-4 masonry masonry`}>
+
+            {portfolio.map((item, id) => {
+
+              let fileSrc = allImages.edges.find(x => x.node.base === item.fileName).node.childImageSharp.fluid
+
               return (
                 <Card
-                  key={edge.node.id}
-                  title={edge.node.title}
-                  description={edge.node.description}
-                  tags={edge.node.tags}
+                  key={id}
+                  title={item.title}
+                  description={item.description}
+                  tags={item.tags}
                   source={fileSrc}
                 />
               )
             })}
-            {/* </div> */}
           </div>
         </div>
       </div>
-    </Layout >
+    </main >
   )
 }
 
 const Card = props => {
-  const { title, description, source, tags } = props;
+  const { title, description, source, tags } = props
 
   return (
-    <div className={`card inline-block p-2 ${styles.item} ${tags.join(" ")}`}>
+    <div className={`card inline-block p-2 item ${tags.join(" ")}`}>
       <div className="bg-gray-100 rounded overflow-hidden shadow-lg mx-auto">
         <Img className="w-full" fluid={source} alt={title} />
         <div className="px-6 py-4">
@@ -218,8 +193,8 @@ const query = graphql`
           id
           base
           childImageSharp {
-            fluid(quality: 100, maxWidth: 500) {
-              ...GatsbyImageSharpFluid_tracedSVG
+            fluid(quality: 90, maxWidth: 500) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }
@@ -228,7 +203,7 @@ const query = graphql`
 
     magsuLogo: file(relativePath: {eq: "images/magsuart-logo.png"}) {
       childImageSharp {
-        fixed(quality: 100, width: 84) {
+        fixed(quality: 90, width: 84) {
           ...GatsbyImageSharpFixed_tracedSVG
         }
       }
@@ -236,30 +211,16 @@ const query = graphql`
 
     bgProfile: file(relativePath: {eq: "images/background/town.jpg"}) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1600) {
+        fluid(quality: 100, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
 
-    skills: allSkillsJson {
-      edges {
-        node {
-          id
-          description
-          title
-        }
-      }
-    }
-
-    portfolio: allPortfolioJson {
-      edges {
-        node {
-          id
-          description
-          fileName
-          title
-          tags
+    bgPanel: file(relativePath: {eq: "images/background/texture.png"}) {
+      childImageSharp {
+        fixed(quality: 90, width: 400) {
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

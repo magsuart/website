@@ -1,22 +1,27 @@
 [
     {
         "title": "Photography",
+        "icon": "📷",
         "description": "Photomanipulation, Retouching photos, Old photo restoration, Black and white photos colorization"
     },
     {
         "title": "Illustration",
+        "icon": "🎨",
         "description": "Logos, Icons, Drawings, Flyers"
     },
     {
         "title": "Video",
+        "icon": "🎞️",
         "description": "Editing, Color grading"
     },
     {
         "title": "VFX",
+        "icon": "🎬",
         "description": "Logo animation, Animation"
     },
     {
         "title": "3D",
+        "icon": "🌎",
         "description": "Modelization, Animation"
     }
 ]

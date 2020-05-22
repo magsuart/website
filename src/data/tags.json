@@ -1,0 +1,32 @@
+[
+    {
+        "id": "btnAll",
+        "value": "All",
+        "tag": "*"
+    },
+    {
+        "id": "btnPhotography",
+        "value": "Photography",
+        "tag": ".Photography"
+    },
+    {
+        "id": "btnIllustration",
+        "value": "Illustration",
+        "tag": ".Illustration"
+    },
+    {
+        "id": "btnVideo",
+        "value": "Video",
+        "tag": ".Video"
+    },
+    {
+        "id": "btnVFX",
+        "value": "VFX",
+        "tag": ".VFX"
+    },
+    {
+        "id": "btn3D",
+        "value": "3D",
+        "tag": ".3D"
+    }
+]
