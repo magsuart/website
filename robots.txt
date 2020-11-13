@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /public
+Sitemap: https://magsu.art/sitemap.xml
+Host: https://magsu.art
