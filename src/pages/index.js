@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import detectBrowserLanguage from "detect-browser-language"
+// import detectBrowserLanguage from "detect-browser-language"
 
 import Img from "gatsby-image"
 import SEO from "../components/seo"
@@ -36,6 +36,8 @@ const IndexPage = () => {
     allImages
   } = useStaticQuery(query)
 
+  const [lang, setLang] = useState("en")
+  
   const [iso, setIso] = useState(null)
 
   const [btnSelected, setBtnSelected] = useState("btnAll")
@@ -98,8 +100,11 @@ const IndexPage = () => {
     }
   }, [])
 
-  var browserLang = detectBrowserLanguage();
-  var lang = browserLang === "fr" || browserLang === "fr-FR" ? "fr" : "en";
+  useEffect(() => {
+    let browserLang = (window.navigator.languages && window.navigator.languages[0]) || window.navigator.language || window.navigator.userLanguage; // detectBrowserLanguage();
+    let langUpdated = browserLang === "fr" || browserLang === "fr-FR" ? "fr" : "en";
+    setLang(langUpdated);
+  }, [])
 
   return (
     <>
