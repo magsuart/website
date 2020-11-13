@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/website`,
   siteMetadata: {
     title: `Magsu.art`,
     lang: `en`,

@@ -1,32 +1,50 @@
 [
     {
         "id": "btnAll",
-        "value": "All",
+        "value": {
+            "fr": "Tous",
+            "en": "All"
+        },
         "tag": "*"
     },
     {
         "id": "btnPhotography",
-        "value": "Photography",
+        "value": {
+            "fr": "Photographie",
+            "en": "Photography"
+        },
         "tag": ".Photography"
     },
     {
         "id": "btnIllustration",
-        "value": "Illustration",
+        "value": {
+            "fr": "Illustration",
+            "en": "Illustration"
+        },
         "tag": ".Illustration"
     },
     {
         "id": "btnVideo",
-        "value": "Video",
+        "value": {
+            "fr": "Vidéo",
+            "en": "Video"
+        },
         "tag": ".Video"
     },
     {
         "id": "btnVFX",
-        "value": "VFX",
+        "value": {
+            "fr": "VFX",
+            "en": "VFX"
+        },
         "tag": ".VFX"
     },
     {
         "id": "btn3D",
-        "value": "3D",
+        "value": {
+            "fr": "3D",
+            "en": "3D"
+        },
         "tag": ".DDD"
     }
 ]

@@ -1,27 +1,62 @@
 [
     {
-        "title": "Photography",
-        "icon": "📷",
-        "description": "Photomanipulation, Retouching photos, Old photo restoration, Black and white photos colorization"
+        "fr": {
+            "title": "Photographie",
+            "icon": "📷",
+            "description": "Photomanipulation, Retouche photos, Restoration de vieilles photos, Photo Noir et Blanc et Colorisation"
+        },
+        "en": {
+            "title": "Photography",
+            "icon": "📷",
+            "description": "Photomanipulation, Retouching photos, Old photo restoration, Black and white photos colorization"
+        }
     },
     {
-        "title": "Illustration",
-        "icon": "🎨",
-        "description": "Logos, Icons, Drawings, Flyers"
+        "fr": {
+            "title": "Illustration",
+            "icon": "🎨",
+            "description": "Logos, Icons, Dessins, Flyers"
+        },
+        "en": {
+            "title": "Illustration",
+            "icon": "🎨",
+            "description": "Logos, Icons, Drawings, Flyers"
+        }
     },
     {
-        "title": "Video",
-        "icon": "🎞️",
-        "description": "Editing, Color grading"
+        "fr": {
+            "title": "Video",
+            "icon": "🎞️",
+            "description": "Edition, Color grading"
+        },
+        "en": {
+            "title": "Video",
+            "icon": "🎞️",
+            "description": "Editing, Color grading"
+        }
     },
     {
-        "title": "VFX",
-        "icon": "🎬",
-        "description": "Logo animation, Animation"
+        "fr": {
+            "title": "VFX",
+            "icon": "🎬",
+            "description": "Logo animation, Animation"
+        },
+        "en": {
+            "title": "VFX",
+            "icon": "🎬",
+            "description": "Logo animation, Animation"
+        }
     },
     {
-        "title": "3D",
-        "icon": "🌎",
-        "description": "Modelization, Animation"
+        "fr": {
+            "title": "3D",
+            "icon": "🌎",
+            "description": "Modélisation, Animation"
+        },
+        "en": {
+            "title": "3D",
+            "icon": "🌎",
+            "description": "Modelization, Animation"
+        }
     }
 ]

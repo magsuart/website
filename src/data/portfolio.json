@@ -1,6 +1,7 @@
 [
     {
         "title": "African woman",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "african_woman.jpg",
         "tags": [
@@ -12,6 +13,7 @@
     },
     {
         "title": "3D creepy animation",
+        "type": "youtube",
         "description": "Lorem ipsum dolor sit amet",
         "embed": "https://www.youtube.com/embed/jQElJTdtsZo",
         "tags": [
@@ -27,6 +29,7 @@
     },
     {
         "title": "Barrel",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "barrels.jpg",
         "tags": [
@@ -38,6 +41,7 @@
     },
     {
         "title": "Brown woman",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "brown_woman.jpg",
         "tags": [
@@ -49,6 +53,7 @@
     },
     {
         "title": "Camel",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "camel.jpg",
         "tags": [
@@ -60,6 +65,7 @@
     },
     {
         "title": "3D epic animation",
+        "type": "youtube",
         "description": "Lorem ipsum dolor sit amet",
         "embed": "https://www.youtube.com/embed/6DJXVJ3MH4s",
         "tags": [
@@ -75,6 +81,7 @@
     },
     {
         "title": "Caricature",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "caricature.jpg",
         "tags": [
@@ -86,6 +93,7 @@
     },
     {
         "title": "Desintegration girl",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "desintegration_girl.jpg",
         "tags": [
@@ -97,6 +105,7 @@
     },
     {
         "title": "Ditys",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "ditys.jpg",
         "tags": [
@@ -108,6 +117,7 @@
     },
     {
         "title": "3D Fish animation",
+        "type": "youtube",
         "description": "Lorem ipsum dolor sit amet",
         "embed": "https://www.youtube.com/embed/Q6Q7st7_8pU",
         "tags": [
@@ -123,6 +133,7 @@
     },
     {
         "title": "Doe in forest",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "doe_in_forest.jpg",
         "tags": [
@@ -134,6 +145,7 @@
     },
     {
         "title": "Escargot",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "escargot.jpg",
         "tags": [
@@ -145,6 +157,7 @@
     },
     {
         "title": "Flying turtle",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "flying_turtle.jpg",
         "tags": [
@@ -156,6 +169,7 @@
     },
     {
         "title": "Japonaise",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "japonaise.jpg",
         "tags": [
@@ -167,6 +181,7 @@
     },
     {
         "title": "Trailer",
+        "type": "youtube",
         "description": "Finale CAN Mantes-la-Jolie 78200 🇨🇩 🇸🇳",
         "embed": "https://www.youtube.com/embed/EdLXrhX4AHo",
         "tags": [
@@ -180,6 +195,7 @@
     },
     {
         "title": "Moonlight girl",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "moonlight_girl.jpg",
         "tags": [
@@ -191,6 +207,7 @@
     },
     {
         "title": "Purple tiger",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "purple_tiger.jpg",
         "tags": [
@@ -202,6 +219,7 @@
     },
     {
         "title": "Statue of liberty",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "statue_of_liberty.jpg",
         "tags": [
@@ -213,6 +231,7 @@
     },
     {
         "title": "Well",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "well.jpg",
         "tags": [
@@ -224,6 +243,7 @@
     },
     {
         "title": "Woman make over",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "woman_make_over.jpg",
         "tags": [
@@ -235,6 +255,7 @@
     },
     {
         "title": "Woman sweat",
+        "type": "image",
         "description": "Lorem ipsum dolor sit amet",
         "fileName": "woman_sweat.jpg",
         "tags": [

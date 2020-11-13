@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import detectBrowserLanguage from "detect-browser-language"
 
 import Img from "gatsby-image"
 import SEO from "../components/seo"
@@ -10,6 +11,7 @@ import YoutubeIcon from "../images/svg/youtube.svg"
 import InstagramIcon from "../images/svg/instagram.svg"
 import MailIcon from "../images/svg/mail.svg"
 
+import bio from "../data/bio.json"
 import portfolio from "../data/portfolio.json"
 import skills from "../data/skills.json"
 import tags from "../data/tags.json"
@@ -74,7 +76,6 @@ const IndexPage = () => {
   useEffect(() => {
 
     let images = [...document.querySelectorAll('.gatsby-image-wrapper picture img')]
-    console.log(images)
     images.map(item => {
       item.onclick = () => {
         let sourceImg = allImages.edges.find(x => x.node.base === item.alt).node.childImageSharp.fluid
@@ -97,10 +98,13 @@ const IndexPage = () => {
     }
   }, [])
 
+  var browserLang = detectBrowserLanguage();
+  var lang = browserLang === "fr" || browserLang === "fr-FR" ? "fr" : "en";
+
   return (
     <>
       <Dialog
-        style={{ width: "90%", height: "90%", padding: "0", margin: "0 auto", background:"transparent" }}
+        style={{ width: "90%", height: "90%", padding: "0", margin: "0 auto", background: "transparent" }}
         aria-label="dialog"
         className="dialogBox"
         isOpen={showDialog}
@@ -108,27 +112,35 @@ const IndexPage = () => {
         onDismiss={closeModal}
       >
         <Img
-          // className="w-full"
+          className="h-screen"
+          // placeholderClassName="h-full"
+          // placeholderStyle={{ "width": "auto" }}
+          imgStyle={imageClicked != null && imageClicked.aspectRatio >= 1 ? { "height": "auto", "width": "100%", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)" } : { "height": "100%", "width": "auto", "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)" }}
           fluid={imageClicked} alt={"Image zoomed"}
         />
       </Dialog>
       <main>
         <SEO />
-        <div className="grid grid-cols-12 gap-0 h-auto lg:h-screen">
+        {/* <div className="grid grid-cols-12 gap-0 h-auto lg:h-screen"> */}
+        <BackgroundImage
+          className="grid grid-cols-12 gap-0 h-auto lg:h-screen"
+          fluid={bgProfile.childImageSharp.fluid}
+        >
 
           {/* Left Panel */}
-          <div className="col-span-12 lg:col-span-5 h-auto lg:h-screen bg-gray-300 text-white">
-            <BackgroundImage
+          <div className="col-span-12 lg:col-span-5 h-auto lg:h-screen bg-right-top text-white">
+            {/* <BackgroundImage
               className="grid grid-cols-1 h-full gap-10 lg:gap-0"
               fluid={bgProfile.childImageSharp.fluid}
-            >
+            > */}
+            <div className="grid grid-cols-1 h-full gap-10 lg:gap-0">
 
               <div className="col-span-1 text-center lg:text-right py-5 px-10 mt-6 lg:mt-10 lg:mt-0 self-center">
                 <div className="flex justify-center lg:justify-end">
                   <Img fixed={magsuLogo.childImageSharp.fixed} />
                 </div>
-                <p className="text-center lg:text-right pt-3 pb-1" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>I'm Magsu.art,</p>
-                <p className="text-center lg:text-right text-sm" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>Freelance Creative & Professional Digital artist.</p>
+                <p className="text-center lg:text-right pt-3 pb-1" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].name}</p>
+                <p className="text-center lg:text-right text-sm" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].tagline}</p>
               </div>
 
               <footer className="col-span-1 self-end py-5 px-10">
@@ -139,19 +151,21 @@ const IndexPage = () => {
                 </div>
                 <p className="text-center lg:text-right text-xs">© <a href="https://magsu.art" name="Magsu.art">Magsu.art</a>{" "}{new Date().getFullYear()}, All rights reserved</p>
               </footer>
-            </BackgroundImage>
+              {/* </BackgroundImage> */}
+            </div>
           </div>
 
           {/* Right Panel */}
           <div
-            className="col-span-12 lg:col-span-7 h-auto lg:h-screen bg-gray-100 lg:overflow-y-scroll px-10 lg:p-16 gap-10"
-            style={{ backgroundImage: `url(${bgPanel.childImageSharp.fixed.srcWebp})` }}
+            id="rightPanel"
+            className="col-span-12 lg:col-span-7 h-auto lg:h-screen lg:overflow-y-scroll px-10 lg:p-16 gap-10"
+            style={{ backgroundImage: `url(${bgPanel.childImageSharp.fixed.src})` }}
           >
 
             {/* Introduction */}
             <div className="my-6 p-2">
-              <h1 className="my-5 lg:mt-8">Lorem ipsum dolor sit amet, consectetur adipiscing.</h1>
-              <p className="">Praesent mi arcu, bibendum eget semper ac, maximus sed nisi. Proin at nibh eget urna semper vehicula. Integer pharetra, risus nec molestie blandit, magna nisl pharetra sem.</p>
+              <h1 className="my-5 lg:mt-8">{bio[lang].title}</h1>
+              <p className="">{bio[lang].description}</p>
             </div>
 
             {/* Skills */}
@@ -161,9 +175,9 @@ const IndexPage = () => {
                   return (
                     <div key={id} className="col-span-12 sm:col-span-6 px-2">
                       <h3 className="pb-2">
-                        <span role="img" aria-label="Photography">{skill.icon}</span> <span className="underline">{skill.title}</span>
+                        <span role="img" aria-label="Photography">{skill[lang].icon}</span> <span className="underline">{skill[lang].title}</span>
                       </h3>
-                      <p className="text-sm">{skill.description}</p>
+                      <p className="text-sm">{skill[lang].description}</p>
                     </div>
                   )
                 })}
@@ -183,7 +197,7 @@ const IndexPage = () => {
                     id={id}
                     onClick={e => handleTagClick(e, tag)}
                     className={`hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ml-3 mb-2 outline-none	${btnSelected === id ? "bg-blue-500" : "bg-red-300"} tagButtons`}>
-                    {value}
+                    {value[lang]}
                   </button>
                 )
               })}
@@ -207,7 +221,8 @@ const IndexPage = () => {
               })}
             </div>
           </div>
-        </div>
+          {/* </div> */}
+        </BackgroundImage>
       </main>
     </>
   )
@@ -220,21 +235,42 @@ const Card = props => {
     <div className={`card inline-block p-2 item ${item.tagsFilter.join(" ")}`}>
       <div className="bg-gray-100 rounded overflow-hidden shadow-lg mx-auto">
 
-        {item.embed ?
-          <iframe title={item.title} width="100%" height="auto" style={{ minHeight: "200px" }} src={item.embed} frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          :
-          <Img className="w-full" fluid={item.source} alt={item.fileName} />
+        {/*
+          image
+          video
+          youtube
+          comparison
+        */}
+
+        {item.type == "youtube" ?
+          <iframe title={item.title} width="100%" height="auto" style={{ minHeight: "200px" }} src={item.embed} frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> : null
         }
 
-        <div className="px-6 py-4">
+        {item.type == "image" ?
+          <Img className="w-full" fluid={item.source} alt={item.fileName} /> : null
+          // <div class="img-comp-container">
+          //   <div class="img-comp-img">
+          //     <Img className="w-full" fluid={item.source} alt={item.fileName} />
+          //   </div>
+          //   <div class="img-comp-img img-comp-overlay">
+          //     <Img className="w-full" fluid={item.source} alt={item.fileName} />
+          //   </div>
+          // </div> : null
+        }
+
+        {/* {item.type == "video" ?
+          <video /> : null
+        } */}
+
+        {/* <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{item.title}</div>
           <p className="text-gray-700 text-base">{item.description}</p>
-        </div>
-        <div className="px-6 py-4">
+        </div> */}
+        {/* <div className="px-6 py-4">
           {item.tags.map((tag, index) => {
             return <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{tag}</span>
           })}
-        </div>
+        </div> */}
       </div>
     </div>
   )
@@ -276,7 +312,7 @@ const query = graphql`
     bgPanel: file(relativePath: {eq: "images/background/texture.png"}) {
       childImageSharp {
         fixed(quality: 90, width: 400) {
-          ...GatsbyImageSharpFixed_withWebp
+          ...GatsbyImageSharpFixed
         }
       }
     }
