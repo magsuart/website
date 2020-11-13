@@ -1,6 +1,6 @@
 {
   "name": "magsu-art",
-  "private": true,
+  "private": false,
   "description": "Magsu.art website",
   "version": "0.1.0",
   "dependencies": {
