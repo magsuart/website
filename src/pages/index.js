@@ -37,7 +37,7 @@ const IndexPage = () => {
   } = useStaticQuery(query)
 
   const [lang, setLang] = useState("en")
-  
+
   const [iso, setIso] = useState(null)
 
   const [btnSelected, setBtnSelected] = useState("btnAll")
@@ -132,32 +132,58 @@ const IndexPage = () => {
           fluid={bgProfile.childImageSharp.fluid}
         >
 
-          {/* Left Panel */}
-          <div className="col-span-12 lg:col-span-5 h-auto lg:h-screen bg-right-top text-white">
-            {/* <BackgroundImage
-              className="grid grid-cols-1 h-full gap-10 lg:gap-0"
+          {/* Left Panel tablet*/}
+          <div className="col-span-12 h-auto bg-right-top text-white lg:hidden">
+            <BackgroundImage
+              className="grid grid-cols-1 h-full gap-10 sm:gap-0"
               fluid={bgProfile.childImageSharp.fluid}
-            > */}
-            <div className="grid grid-cols-1 h-full gap-10 lg:gap-0">
+            >
+              <div className="grid grid-cols-1 h-full gap-10 lg:gap-0">
 
-              <div className="col-span-1 text-center lg:text-right py-5 px-10 mt-6 lg:mt-10 lg:mt-0 self-center">
-                <div className="flex justify-center lg:justify-end">
-                  <Img fixed={magsuLogo.childImageSharp.fixed} />
+                <div className="col-span-1 text-center lg:text-right py-5 px-10 mt-6 lg:mt-10 lg:mt-0 self-center">
+                  <div className="flex justify-center lg:justify-end">
+                    <Img fixed={magsuLogo.childImageSharp.fixed} />
+                  </div>
+                  <p className="text-center lg:text-right pt-3 pb-1" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].name}</p>
+                  <p className="text-center lg:text-right text-sm" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].tagline}</p>
                 </div>
-                <p className="text-center lg:text-right pt-3 pb-1" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].name}</p>
-                <p className="text-center lg:text-right text-sm" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].tagline}</p>
+
+                <footer className="col-span-1 self-end py-5 px-10">
+                  <div className="text-center lg:text-right my-1">
+                    <a href="https://www.instagram.com/magsu.art/" name="Instagram" target="_blank" rel="noreferrer"><InstagramIcon className="inline h-6 mx-2" /></a>
+                    <a href="https://www.youtube.com/channel/UC_PC4SHLCl-6GD0sXsqkU5w" name="Youtube" target="_blank" rel="noreferrer"><YoutubeIcon className="inline h-8 mx-2" /></a>
+                    <a href="https://forms.gle/s8LAs1gH5JTcD6MR7" name="Mail" target="_blank" rel="noreferrer"><MailIcon className="inline h-8 ml-2" /></a>
+                  </div>
+                  <p className="text-center lg:text-right text-xs">© <a href="https://magsu.art" name="Magsu.art">Magsu.art</a>{" "}{new Date().getFullYear()}, All rights reserved</p>
+                </footer>
               </div>
 
-              <footer className="col-span-1 self-end py-5 px-10">
-                <div className="text-center lg:text-right my-1">
-                  <a href="https://www.instagram.com/magsu.art/" name="Instagram" target="_blank" rel="noreferrer"><InstagramIcon className="inline h-6 mx-2" /></a>
-                  <a href="https://www.youtube.com/channel/UC_PC4SHLCl-6GD0sXsqkU5w" name="Youtube" target="_blank" rel="noreferrer"><YoutubeIcon className="inline h-8 mx-2" /></a>
-                  <a href="https://forms.gle/s8LAs1gH5JTcD6MR7" name="Mail" target="_blank" rel="noreferrer"><MailIcon className="inline h-8 ml-2" /></a>
+            </BackgroundImage>
+          </div>
+
+          {/* Left Panel more than tablet*/}
+          <div className="sm:hidden lg:block lg:col-span-5 h-auto lg:h-screen bg-right-top text-white">
+            
+              <div className="grid grid-cols-1 h-full gap-10 lg:gap-0">
+
+                <div className="col-span-1 text-center lg:text-right py-5 px-10 mt-6 lg:mt-10 lg:mt-0 self-center">
+                  <div className="flex justify-center lg:justify-end">
+                    <Img fixed={magsuLogo.childImageSharp.fixed} />
+                  </div>
+                  <p className="text-center lg:text-right pt-3 pb-1" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].name}</p>
+                  <p className="text-center lg:text-right text-sm" style={{ textShadow: "2px 2px 5px rgba(0, 0, 0, 0.6)" }}>{bio[lang].tagline}</p>
                 </div>
-                <p className="text-center lg:text-right text-xs">© <a href="https://magsu.art" name="Magsu.art">Magsu.art</a>{" "}{new Date().getFullYear()}, All rights reserved</p>
-              </footer>
-              {/* </BackgroundImage> */}
-            </div>
+
+                <footer className="col-span-1 self-end py-5 px-10">
+                  <div className="text-center lg:text-right my-1">
+                    <a href="https://www.instagram.com/magsu.art/" name="Instagram" target="_blank" rel="noreferrer"><InstagramIcon className="inline h-6 mx-2" /></a>
+                    <a href="https://www.youtube.com/channel/UC_PC4SHLCl-6GD0sXsqkU5w" name="Youtube" target="_blank" rel="noreferrer"><YoutubeIcon className="inline h-8 mx-2" /></a>
+                    <a href="https://forms.gle/s8LAs1gH5JTcD6MR7" name="Mail" target="_blank" rel="noreferrer"><MailIcon className="inline h-8 ml-2" /></a>
+                  </div>
+                  <p className="text-center lg:text-right text-xs">© <a href="https://magsu.art" name="Magsu.art">Magsu.art</a>{" "}{new Date().getFullYear()}, All rights reserved</p>
+                </footer>
+              </div>
+
           </div>
 
           {/* Right Panel */}
