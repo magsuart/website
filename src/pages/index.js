@@ -306,7 +306,7 @@ const query = graphql`
       }
     }
 
-    bgProfile: file(relativePath: {eq: "images/background/town.jpg"}) {
+    bgProfile: file(relativePath: {eq: "images/background/temple.jpg"}) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
