@@ -58,5 +58,17 @@
             "icon": "🌎",
             "description": "Modelization, Animation"
         }
+    },
+    {
+        "fr": {
+            "title": "Coding",
+            "icon": "👩‍💻",
+            "description": "Unity, C#, HTML5/CSS, Javascript"
+        },
+        "en": {
+            "title": "Coding",
+            "icon": "👩‍💻",
+            "description": "Unity, C#, HTML5/CSS, Javascript"
+        }
     }
 ]
